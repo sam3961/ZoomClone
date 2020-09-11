@@ -7,24 +7,24 @@
 
     <fragment
         android:id="@+id/navigation_meetchat"
-        android:name="com.app.ola.zoomApp.ui.meetChat.MeetChatFragment"
+        android:name="com.app.zoomclone.zoomApp.ui.meetChat.MeetChatFragment"
         android:label="@string/title_meet_chat"
         tools:layout="@layout/fragment_meetchat" />
 
     <fragment
         android:id="@+id/navigation_meetings"
-        android:name="com.app.ola.zoomApp.ui.meetings.MeetingsFragment"
+        android:name="com.app.zoomclone.zoomApp.ui.meetings.MeetingsFragment"
         android:label="@string/title_meetings"
         tools:layout="@layout/fragment_meetings" />
 
     <fragment
         android:id="@+id/navigation_contacts"
-        android:name="com.app.ola.zoomApp.ui.contacts.ContactsFragment"
+        android:name="com.app.zoomclone.zoomApp.ui.contacts.ContactsFragment"
         android:label="@string/title_contacts"
         tools:layout="@layout/fragment_contacts" />
     <fragment
         android:id="@+id/navigation_settings"
-        android:name="com.app.ola.zoomApp.ui.settings.SettingsFragment"
+        android:name="com.app.zoomclone.zoomApp.ui.settings.SettingsFragment"
         android:label="@string/title_settings"
         tools:layout="@layout/fragment_settings" />
 </navigation>

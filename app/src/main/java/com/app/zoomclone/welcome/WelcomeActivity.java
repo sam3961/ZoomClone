@@ -1,5 +1,6 @@
 package com.app.zoomclone.welcome;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -9,13 +10,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.viewpager.widget.ViewPager;
 
+import com.app.zoomclone.LoginActivity;
 import com.app.zoomclone.R;
 import com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator;
 
 public class WelcomeActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ViewPager viewPager;
-    private TextView textViewSignup, textViewSignIn;
+    private TextView textViewSignup, textViewSignin;
     private AppCompatButton buttonJoinMeeting;
     private SpringDotsIndicator dotsIndicator;
 
@@ -27,6 +29,21 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
         initViews();
         clickListener();
         setPagerAdapter();
+
+    }
+
+    private void initViews() {
+        viewPager = findViewById(R.id.viewPager);
+        textViewSignin = findViewById(R.id.textViewSignIn);
+        textViewSignup = findViewById(R.id.textViewSignup);
+        dotsIndicator = findViewById(R.id.dots_indicator);
+        buttonJoinMeeting = findViewById(R.id.btnJoinMeeting);
+    }
+
+    private void clickListener() {
+        textViewSignin.setOnClickListener(this);
+        textViewSignup.setOnClickListener(this);
+        buttonJoinMeeting.setOnClickListener(this);
     }
 
     private void setPagerAdapter() {
@@ -34,38 +51,28 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
         dotsIndicator.setViewPager(viewPager);
     }
 
-
-    private void initViews() {
-        viewPager = findViewById(R.id.viewPager);
-        textViewSignup = findViewById(R.id.textViewSignup);
-        textViewSignIn = findViewById(R.id.textViewSignIn);
-        buttonJoinMeeting = findViewById(R.id.btnJoinMeeting);
-        dotsIndicator = findViewById(R.id.dots_indicator);
-
-    }
-
-    private void clickListener() {
-        textViewSignup.setOnClickListener(this);
-        textViewSignIn.setOnClickListener(this);
-        buttonJoinMeeting.setOnClickListener(this);
-    }
-
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
 
-            case R.id.textViewSignup:
-
-                break;
             case R.id.textViewSignIn:
-
+                navigateToSignIn(true);
                 break;
+            case R.id.textViewSignup:
+                navigateToSignIn(false);
+                break;
+
             case R.id.btnJoinMeeting:
 
                 break;
 
-
         }
+    }
 
+    private void navigateToSignIn(boolean isSignIn) {
+        Intent intent = new Intent(this, LoginActivity.class);
+        intent.putExtra("isSignIn",isSignIn);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 }

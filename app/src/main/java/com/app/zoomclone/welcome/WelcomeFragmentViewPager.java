@@ -15,32 +15,32 @@ import com.app.zoomclone.R;
 
 public class WelcomeFragmentViewPager extends Fragment {
 
-
-    public static Fragment newInstanced(String title, String desc, int image) {
+    public static Fragment newInstance(String title, String desc, int image) {
         WelcomeFragmentViewPager fragmentViewPager = new WelcomeFragmentViewPager();
         Bundle bundle = new Bundle();
         bundle.putString("title",title);
         bundle.putString("desc",desc);
         bundle.putInt("image",image);
         fragmentViewPager.setArguments(bundle);
-
         return fragmentViewPager;
+
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragmet_welcome_viewpager,container,false);
 
-        TextView textViewTitle =  view.findViewById(R.id.textViewTitle);
-        TextView textViewDesc =  view.findViewById(R.id.textViewDescription);
-        ImageView imageView =  view.findViewById(R.id.image);
+        View view = inflater.inflate(R.layout.fragment_welcome_viewpager,container,false);
 
-        imageView.setBackgroundResource(getArguments().getInt("image"));
+        TextView textViewTitle = view.findViewById(R.id.textViewTitle);
+        TextView textViewDesc = view.findViewById(R.id.textViewDesc);
+        ImageView imageView = view.findViewById(R.id.imageView);
+
+
         textViewTitle.setText(getArguments().getString("title"));
         textViewDesc.setText(getArguments().getString("desc"));
+        imageView.setImageResource(getArguments().getInt("image"));
 
-
-        return  view;
+        return view;
     }
 }

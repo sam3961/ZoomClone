@@ -15,7 +15,6 @@
         android:id="@+id/navigation_contacts"
         android:icon="@drawable/ic_baseline_account_box_24"
         android:title="@string/title_contacts" />
-
     <item
         android:id="@+id/navigation_settings"
         android:icon="@drawable/ic_baseline_settings_24"

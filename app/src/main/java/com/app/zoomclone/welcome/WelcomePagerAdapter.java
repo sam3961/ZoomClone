@@ -13,6 +13,7 @@ public class WelcomePagerAdapter extends FragmentPagerAdapter {
 
     private Activity activity;
 
+
     public WelcomePagerAdapter(Activity activity, @NonNull FragmentManager fm) {
         super(fm);
         this.activity = activity;
@@ -22,24 +23,21 @@ public class WelcomePagerAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         switch (position) {
-            case 0:
-                return WelcomeFragmentViewPager.newInstanced(activity.getString(R.string.start_a_meeting),
-                        activity.getString(R.string.start_or_join_video), R.drawable.welcome_1);
-            case 1:
-                return WelcomeFragmentViewPager.newInstanced(activity.getString(R.string.share_your_content),
-                        activity.getString(R.string.they_see), R.drawable.welcome_2);
 
+            case 1:
+                return WelcomeFragmentViewPager.newInstance(activity.getString(R.string.share_your_content),
+                        activity.getString(R.string.they_see), R.drawable.welcome_2);
             case 2:
-                return WelcomeFragmentViewPager.newInstanced(activity.getString(R.string.manage_your_team),
+                return WelcomeFragmentViewPager.newInstance(activity.getString(R.string.manage_your_team),
                         activity.getString(R.string.send_texts), R.drawable.welcome_3);
             case 3:
-                return WelcomeFragmentViewPager.newInstanced(activity.getString(R.string.get_zooming),
+                return WelcomeFragmentViewPager.newInstance(activity.getString(R.string.get_zooming),
                         activity.getString(R.string.work_anywhere), R.drawable.welcome_4);
 
+            case 0:
             default:
-                return WelcomeFragmentViewPager.newInstanced(activity.getString(R.string.start_a_meeting),
+                return WelcomeFragmentViewPager.newInstance(activity.getString(R.string.start_a_meeting),
                         activity.getString(R.string.start_or_join_video), R.drawable.welcome_1);
-
         }
     }
 

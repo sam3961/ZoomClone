@@ -5,8 +5,8 @@
     <string name="google_android_map_api_key_v2_none2">AIzaSyCTDvoDP6xZxoyfkYl7j_1t6TbeOesyGB8</string>
 
 
-    <string name="facebook_app_id">1147909272233739</string>
-    <string name="fb_login_protocol_scheme">fb1147909272233739</string>
+    <string name="facebook_app_id">265116347784298</string>
+    <string name="fb_login_protocol_scheme">fb265116347784298</string>
 
     <string name="app_name">Zoom</string>
     <string name="splash_app_title">Sample Video Chat Java</string>
@@ -404,4 +404,8 @@
     <string name="invalid_email">Enter valid e-mail!</string>
     <string name="empty_password">Please enter password.</string>
     <string name="invalid_password">Password must be at least six characters.</string>
+    <string name="profile">Profile</string>
+    <string name="search">Search</string>
+    <string name="new_meeting">New Meeting</string>
+    <string name="join">Join</string>
 </resources>
